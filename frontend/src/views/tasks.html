@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="../assets/img/to-do_favicon.png">
+    <link rel="stylesheet" href="../assets/scss/styles.scss">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script type="module" src="../assets/js/bs.js" defer></script>
+
+    <script type="module" src="../controllers/TaskController.js" defer></script>
+
+    <title>Task Manager - Tasks</title>
+
+</head>
+
+<body class="background">
+
+    <header>
+        <nav class="navbar bg-primary shadow">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">
+                    <img src="../assets/img/to-do_logo.png" alt="brand-icon" width="50" height="50"> Task Manager
+                </a>
+                <button type="button" class="btn btn-dark" id="logout_button">logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <!--  -->
+
+    <main class="container p-4">
+
+        <form class="container-lg col-sm-12 col-md-8 col-lg-6 p-2 bg-white shadow rounded needs-validation" id="task_form" novalidate>
+
+            <div class="mb-3 p-2">
+                <label for="title_input">Título</label>
+                <input type="text" class="form-control" id="title_input" placeholder="Título" required maxlength="32" autocomplete="off">
+                <div class="invalid-feedback">
+                    campo obrigatório!
+                </div>
+            </div>
+
+            <div class="mb-3 p-2">
+                <label for="description_input">Descrição</label>
+                <textarea class="form-control" id="description_input"  placeholder="Descrição" rows="3" required maxlength="256"></textarea>
+                <div class="invalid-feedback">
+                    campo obrigatório!
+            </div>
+
+            <div class="mb-3 p-2">
+                <label for="dueDate_input">Vencimento</label>
+                <input type="date" class="form-control" id="dueDate_input" placeholder="Vencimento" required>
+                <div class="invalid-feedback">
+                    campo obrigatório!
+                </div>
+            </div>
+
+            <div class="mb-3 p-2">
+                <label for="status_input">Status</label>
+                <select class="form-select" id="status_input" required>
+                    <option value="0" selected disabled>Selecione um status</option>
+                    <option value="1">pendente</option>
+                    <option value="2">fazendo</option>
+                    <option value="3">urgente</option>
+                    <option value="4">atrasado</option>
+                    <option value="5">feito</option>
+                </select>
+                <div class="invalid-feedback">
+                    campo obrigatório!
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-outline-dark" id="create_button">Adicionar</button>
+            </div>
+        </form>
+
+        <div class="row p-4" id="board">
+            <!-- Cards will be created here -->
+           <!-- Card example -->
+           <!--
+           <div class="col-sm-12 col-md-6 col-lg-4 p-2">
+                <div class="card postItYellow shadow">
+
+                    <div class="card-body">
+
+                        <p class="h5 card-title mb-2">Sexta-feira</p>
+                        <p class="card-text mb-2">Programação WEB II - Prof. Helder</p>
+                        <p class="card-text mb-2">Status: {status}</p>
+                        <p class="card-text mb-2">Vencimento: ${data}</p>
+
+                    </div>
+
+                    <div class="card-footer d-flex justify-content-center">
+                        <button type="button" class="container-sm col-5 btn btn-outline-dark">deletar</button>
+                        <button type="button" class="container-sm col-5 btn btn-outline-dark" data-bs-toggle="modal">editar</button>
+                    </div>
+                
+                </div>
+
+            </div>
+            -->
+
+
+        </div>
+           
+
+        <div class="modal" tabindex="-1" id="update_modal">
+            <div class="modal-dialog">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="title_modal">Editar</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <form class="needs-validation" id="update_form" novalidate>
+                            <div class="mb-3 p-2">
+                                <label for="title_update">Título</label>
+                                <input type="text" class="form-control" id="title_update" placeholder="Título" required maxlength="32" autocomplete="off">
+                                <div class="invalid-feedback">
+                                    campo obrigatório!
+                                </div>
+                            </div>
+                
+                            <div class="mb-3 p-2">
+                                <label for="description_update">Descrição</label>
+                                <textarea class="form-control" id="description_update"  placeholder="Descrição" rows="3" required maxlength="256"></textarea>
+                                <div class="invalid-feedback">
+                                    campo obrigatório!
+                                </div>
+                            </div>
+                
+                            <div class="mb-3 p-2">
+                                <label for="dueDate_update">Vencimento</label>
+                                <input type="date" class="form-control" id="dueDate_update" placeholder="Vencimento" required>
+                                <div class="invalid-feedback">
+                                    campo obrigatório!
+                                </div>
+                            </div>
+
+                            <div class="mb-3 p-2">
+                                <label for="status_update">Status</label>
+                                <select class="form-select" id="status_update">
+                                    <option value="0" selected disabled>Selecione um status</option>
+                                    <option value="1">pendente</option>
+                                    <option value="2">fazendo</option>
+                                    <option value="3">urgente</option>
+                                    <option value="4">atrasado</option>
+                                    <option value="5">feito</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    campo obrigatório!
+                                </div>
+                            </div>
+                
+                        </form>
+                        
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">cancelar</button>
+                        <button type="submit" class="btn btn-outline-dark" data-bs-dismiss="modal" id="update_button">confirmar</button>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </main>
+    
+    <!--  -->
+
+</body>
+</html>

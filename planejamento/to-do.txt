@@ -1,0 +1,33 @@
+backend
+	-criar banco de dados postgres [feito]
+	-trocar task *name* por *title* [feito]
+	-criar queries para popular o banco [feito]
+	-testar a API com Insomnia [feito]
+	-usar um padrão no tratamento de erros
+
+
+frontend
+	-analisar código reutilizável do 'Quadro de Recados' => bimestre-1-trabalho-1-yano [feito]
+	-organizar estrutura do projeto [feito]
+
+	-design tela de login [feito]
+	-implementar funcionalidade de login [feito]
+	-implementar funcionalidade de registrar [feito]
+
+	-implementar uso do token nos endpoints [feito]
+
+	-design tela de 'Gerenciamento de Tarefas' [feito]
+	-implementar funcionalidade de getAllTasks [feito]
+	-implementar funcionalidade de createTask [feito]
+	-implementar funcionalidade de updateTask [feito]
+	-implementar funcionalidade de deleteTask [feito]
+
+	-implementar funcionalidade de renderTask [feito]
+	-implementar mudança de cor do card baseada no status [feito]
+
+	-implementar lógica de status => gerenciamento automatico de status baseado na dueDate
+	-ajustar cores dos postIt's para tons pastel
+	-implementar lógica de não autenticado, caso bypass por url
+
+	-testar todas as funcionalidades e debugging
+	-analisar necessidade de rafatoração de código

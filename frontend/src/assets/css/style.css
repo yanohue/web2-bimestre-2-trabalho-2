@@ -1,0 +1,28 @@
+.background {
+    background-color: #beae97;
+}
+
+.postItYellow {
+    background-color: #ffff99;
+}
+
+.postItBlue {
+    background-color: #99d5ff;
+}
+
+.postItOrange {
+    background-color: #fe8142;
+}
+
+.postItRed {
+    background-color: #ff4b4b;
+}
+
+.postItGreen {
+    background-color: #99ffa0;
+}
+
+.spacer {
+    width: 100vw;
+    height: 20vh;
+}

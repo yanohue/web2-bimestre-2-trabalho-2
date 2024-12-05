@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="../assets/img/to-do_favicon.png">
+    <link rel="stylesheet" href="../assets/scss/styles.scss">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script type="module" src="../assets/js/bs.js" defer></script>
+
+
+    <script type="module" src="../controllers/LoginController.js" defer></script>
+
+
+    <title>Task Manager - Login</title>
+
+</head>
+
+<body class="background">
+    <a href="./tasks.html"></a>
+    <header>
+        <nav class="navbar bg-primary shadow">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">
+                    <img src="../assets/img/to-do_logo.png" alt="brand-icon" width="50" height="50"> Task Manager
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="spacer"></div>
+    
+    <main class="container-fluid p-4">
+
+        <form class="container-lg col-sm-12 col-md-6 col-lg-3 p-4 bg-white shadow rounded needs-validation" id="login_form" novalidate>
+            <div class="mb-3">
+                <input type="text" class="form-control" id="username_input" placeholder="username" required maxlength="64" autocomplete="off">
+                <div class="invalid-feedback">
+                    *required field
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <input type="password" class="form-control" id="password_input" placeholder="password" required minlength="8" maxlength="32" autocomplete="off">
+                <div class="invalid-feedback">
+                    *required field
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-outline-dark" id="register_button">register</button>
+                <button type="button" class="btn btn-outline-dark" id="login_button">login</button>
+            </div>
+
+        </form>
+
+    </main>
+
+</body>
+
+</html>
